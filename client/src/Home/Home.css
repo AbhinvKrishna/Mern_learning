@@ -1,0 +1,25 @@
+body{
+    background-color: rgb(171, 189, 190);
+}
+
+
+.firstPage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+
+.welcome{
+    font-size: 4rem;
+    color: rgb(255, 187, 0);
+    text-decoration: underline;
+}
+
+.w2{
+    font-size: 5rem;
+    color:black;
+    text-decoration: underline rgb(93, 69, 180);
+}
+

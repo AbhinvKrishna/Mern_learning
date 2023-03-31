@@ -1,0 +1,20 @@
+.contactBox{
+    background: white;
+    width: 300px;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 10px 1px 8px 1px;
+}
+
+.txt-bold{
+    font-weight: bolder;
+}
+
+.mg-box{
+    background: white;
+    margin-top: 50px;
+    border: 1px solid;
+    box-sizing: border-box;
+    box-shadow: -20px -8px 10px 2px;
+}

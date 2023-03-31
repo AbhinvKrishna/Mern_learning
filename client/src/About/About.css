@@ -1,0 +1,19 @@
+.about{
+    background: white;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 10px;
+}
+
+.profile-edit-btn{
+    margin-top: 20px;
+    background: rosybrown;
+    border: 1px solid;
+    border-radius: 10px;
+    font-weight: bolder;
+}
+
+.bl{
+    color: rgb(0, 123, 255);
+}

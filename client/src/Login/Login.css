@@ -1,0 +1,61 @@
+.loginPage{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loginForm{
+    width: 900px;
+    height: auto;
+    background-color: aliceblue;
+    margin-top:60px;
+    border: 3px;
+    border-radius: 20px;
+    box-shadow: 10px 30px 40px 10px;
+    display: flex;
+}
+
+.loginDetails{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 70px;
+}
+
+.boldit{
+    font-weight: bolder;
+}
+
+.logDetails{
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-top: 30px;
+}
+
+.logCont{
+    background-color: aliceblue;
+}
+
+input{
+    margin-left: 10px;
+    border:none;
+    background-color: aliceblue;
+}
+
+.lBtn{   
+    margin-top: 30px;
+}
+
+.lBtn input{
+    background-color: rgb(255, 166, 0);
+    border: 1px solid black;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.loginSign{
+    display: flex;
+    flex-direction: column;
+}

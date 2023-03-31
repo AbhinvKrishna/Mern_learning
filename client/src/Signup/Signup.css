@@ -1,0 +1,61 @@
+.signPage{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.form{
+    width: 900px;
+    height: auto;
+    background-color: aliceblue;
+    margin-top:60px;
+    border: 3px;
+    border-radius: 20px;
+    box-shadow: 10px 30px 40px 10px;
+    display: flex;
+}
+
+.userDetails{
+    display: flex;
+    flex-direction: column;
+    margin: 30px 70px;
+}
+
+.boldit{
+    font-weight: bolder;
+}
+
+.details{
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-top: 30px;
+}
+
+.detailCont{
+    background-color: aliceblue;
+}
+
+input{
+    margin-left: 10px;
+    border:none;
+    background-color: aliceblue;
+}
+
+.rBtn{   
+    margin-top: 30px;
+}
+
+.rBtn input{
+    background-color: aqua;
+    border: 1px solid black;
+    width: 100px;
+    border-radius: 10px;
+}
+
+.logoSign{
+    display: flex;
+    flex-direction: column;
+}
