@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/" element={ <Home/>} /> {/* exact is used to guide on specific path */}        
             <Route exact path="/about" element={<About />} /> {/* exact is used to guide on specific path */}
             <Route exact path="/contact" element={< Contact/>} />
-            <Route exact path="/signUp" element={< Signup/>} />
+            <Route exact path="/signup" element={< Signup/>} />
             <Route exact path="/login" element={< Login/>} />
             <Route path='*' element={< Errorpage/>} />
           </Routes>

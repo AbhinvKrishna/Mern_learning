@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const jwt = require('jsonwebtoken');
+
 
 require('../db/conn');
 const User = require('../model/userSchema');
@@ -35,13 +35,8 @@ router.post('/register', async(req, res)=>{
             // yaha pe hashing password wala middleware work krega pehle//
     
           const userRegister= await user.save()
+          return res.json(userRegister);
     
-          if(userRegister){
-            res.status(201).json({message:"user registered successfuly"});
-          }
-          else{
-            res.status(500).json({error:"Failed to register"});
-          }
       
         }
 
@@ -72,18 +67,18 @@ router.post('/signin', async (req, res) =>{
 
         const isMatch = await  bcrypt.compare(password, userLogin.password)
         
-        const token = await userLogin.generateAuthToken();
-        console.log(token)
+        /* const token = await userLogin.generateAuthToken();
+        console.log(token) */
 
         if(isMatch){
-        res.json({message:"user sign in successfully"});
+           return res.json({message:"user sign in successfully"});
         }
         else{
-            res.status(400).json({err:"please fill valid Credentials(pass)"})
+           return res.status(400).json({err:"please fill valid Credentials(pass)"})
         }
     }
     else{
-        res.status(400).json({err:"please fill valid Credentials"})   
+       return res.status(400).json({err:"please fill valid Credentials"})   
     }
 
     } catch (error) {

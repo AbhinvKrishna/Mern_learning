@@ -1,21 +1,24 @@
 const express = require("express");
+const router = require('./router/auth')
 const dotenv = require("dotenv");
 const app = express();
 const cors = require("cors")
-const port = 8000;
+const bodyParser = require("body-parser");
+const port = 5000;
 
 dotenv.config({path:'./config.env'});
 
 require('./db/conn');
 
 app.use(cors());
+app.use(bodyParser.json())
 
 //const User = require("./model/userSchema"); // --> This is importing method of userSchema//
 
 app.use(express.json());
 
 //we link the router files to make our route easy
-app.use(require('./router/auth'));
+app.use(router);
 
 //Middelware
 
