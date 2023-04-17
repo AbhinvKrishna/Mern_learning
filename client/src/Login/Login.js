@@ -3,9 +3,11 @@ import './Login.css'
 import email from '../Signup/email.png';
 import password from '../Signup/password.png';
 import LoginLogo from './loginLogo.png';
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 
 function Login() {
+
+  const logNavigate = useNavigate();
 
   const[ulogin, setUlogin]= useState({})
 
@@ -32,6 +34,14 @@ function Login() {
 
     const loginData = await loginResponse.json();
     console.log(loginData);
+
+    if(loginResponse.status===400){
+      window.alert('Failed to login');
+    }
+    else{
+      window.alert('Successfully login...');
+      logNavigate('/about')
+    }
 
   }
 

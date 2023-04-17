@@ -59,3 +59,13 @@ input{
     display: flex;
     flex-direction: column;
 }
+
+@media(max-width:980px){
+   .loginForm{
+    flex-direction: column;
+   }
+
+   .loginSign img{
+    height: 200px;
+   }
+}

@@ -7,12 +7,12 @@ import work from '../Signup/work.jpg'
 import password from '../Signup/password.png'
 import cpassword from '../Signup/cpassword.webp'
 import signupLogo from '../Signup/signupLogo.png'
-import { Link  } from 'react-router-dom'
+import { Link, useNavigate  } from 'react-router-dom'
 
 function Signup() {
 
 
-  // const Navigate = useNavigate();
+   const Navigate = useNavigate();
 
   const [user, setUser] = useState({});
 
@@ -37,6 +37,17 @@ function Signup() {
 
     const data = await response.json();
     console.log(data)   
+
+
+    if(response.status === 422){
+      window.alert("Invalid registration");
+      console.log("Invalid registration");
+    }
+    else{
+      window.alert("valid registration");
+      console.log("valid registration");
+      Navigate('/about')
+    }
 
     
   }
