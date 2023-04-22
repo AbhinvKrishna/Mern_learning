@@ -1,13 +1,14 @@
 import React from 'react'
 import './About.css'
 import userPic from './Babaji.jpg'
+//import { useNavigate } from 'react-router-dom'
 
 function About() {
   return (
     <>
 
       <div className="container about">
-        <form method=''>
+        <form method='GET'>
           <div className="row">
             <div className="col-md-4">
               <img src={userPic} alt="Baba" style={{ width: "150px" }} />
@@ -15,8 +16,8 @@ function About() {
 
             <div className="col-md-6">
               <div className="profile-head">
-                <h5>Babaji</h5>
-                <h6>CM of UP</h6>
+                <h5>hii</h5>
+                <h6>hii</h6>
                 <p className="profile-rating"> RANKINGS: <span> 1/10</span></p>
 
                 <ul className="nav nav-tabs" role="tablist">
@@ -72,7 +73,7 @@ function About() {
                       <label>Name</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Baba Yogi Adityanath</p>
+                      <p>hii</p>
                     </div>
                   </div>
 
@@ -81,7 +82,7 @@ function About() {
                       <label>Email</label>
                     </div>
                     <div className="col-md-6">
-                      <p>bbnxtpm2030@up.com</p>
+                      <p>hii</p>
                     </div>
                   </div>
 
@@ -90,7 +91,7 @@ function About() {
                       <label>Phone</label>
                     </div>
                     <div className="col-md-6">
-                      <p>+91 9877223212</p>
+                      <p>hii</p>
                     </div>
                   </div>
 
@@ -99,7 +100,7 @@ function About() {
                       <label>Profession</label>
                     </div>
                     <div className="col-md-6">
-                      <p>Web Developer</p>
+                      <p> hii</p>
                     </div>
                   </div>
                 </div>

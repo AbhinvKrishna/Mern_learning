@@ -36,7 +36,7 @@ function Login() {
     console.log(loginData);
 
     if(loginResponse.status===400){
-      window.alert('Failed to login');
+      window.alert(JSON.stringify(loginResponse.statusText));
     }
     else{
       window.alert('Successfully login...');

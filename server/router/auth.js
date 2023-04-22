@@ -1,10 +1,18 @@
+const jwt = require("jsonwebtoken");
 const express = require("express");
+const cors = require("cors");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
+const cookieParser = require("cookie-parser");
+
+
+router.use(cors({credentials: true, origin: true}));
+router.use(cookieParser())
 
 
 require('../db/conn');
 const User = require('../model/userSchema');
+
 
 router.get('/', (req, res)=>{
     res.send('Hello World from the server router js')
@@ -56,7 +64,9 @@ router.post('/signin', async (req, res) =>{
         const {email, password} = req.body;
 
         if(!email || !password){
+            
             return res.status(400).json({error:"please fill the data"})
+            
         }
 
         const userLogin =  await User.findOne({email:email});
@@ -67,8 +77,17 @@ router.post('/signin', async (req, res) =>{
 
         const isMatch = await  bcrypt.compare(password, userLogin.password)
         
-        /* const token = await userLogin.generateAuthToken();
-        console.log(token) */
+        const token = await userLogin.generateAuthToken();
+        console.log(token) 
+
+       res.cookie("jwtoken", token,{
+            expires: new Date(Date.now()+90000000),
+            httpOnly:true
+        });
+
+     
+
+
 
         if(isMatch){
            return res.json({message:"user sign in successfully"});
@@ -117,5 +136,39 @@ router.post('/signin', async (req, res) =>{
     }).catch(err=>{ console.log(err)})
 
 }) */
+
+// about us ka page //
+
+const authenticate = async (req, res, next)=>{
+    try {
+        const token = req.cookies.jwtoken;
+        const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
+        console.log(verifyToken);
+
+
+        const rootUser = await User.findOne({_id:verifyToken._id, "tokens.token": token});
+
+        if(!rootUser){
+            throw new Error('User not found');
+        }
+
+        req.token = token;
+        req.rootUser = rootUser;
+        req.userID = rootUser._id;
+
+        next();
+
+
+    } catch (error) {
+        res.status(401).send('Unauthorized : No token provided');
+        console.log(error)
+    }
+}
+
+
+router.get('/about',authenticate ,(req, res)=>{
+    console.log('hello ')
+    res.send(req.rootUser);
+});
 
 module.exports = router;
